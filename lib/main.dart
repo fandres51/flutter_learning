@@ -13,12 +13,35 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.teal[400],
       ),
-      body: Center(
-          child: IconButton(
-        onPressed: () {},
-        icon: Icon(Icons.alternate_email),
-        color: Colors.amber,
-      )),
+      body: Row(
+        children: [
+          Expanded(flex: 3, child: Image.asset('assets/images/joseph.jpg')),
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding: EdgeInsets.all(20.0),
+              color: Colors.cyan,
+              child: Text('1'),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.all(20.0),
+              color: Colors.pinkAccent,
+              child: Text('2'),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.all(20.0),
+              color: Colors.amber,
+              child: Text('3'),
+            ),
+          ),
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
         child: Text('click'),
         backgroundColor: Colors.teal[400],
@@ -73,3 +96,37 @@ class Home extends StatelessWidget {
           //   icon: Icon(Icons.alternate_email),
           //   color: Colors.amber,
           // ),
+
+
+
+//PAddings and containers
+
+// body: Container(
+//         padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
+//         margin: EdgeInsets.all(20.0),
+//         color: Colors.grey[400],
+//         child: Text('hello'),
+//       ),
+
+// body: Margin(
+// body: Padding(
+//         padding: EdgeInsets.all(30.0),
+//         child: Text('hello'),
+//       ),
+
+// body: Row(
+// body: Column(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         crossAxisAlignment: CrossAxisAlignment.center,
+//         children: [
+//            Text('hello'),
+//         ]),
+
+// Expanded(
+//         flex: 1,
+//         child: Container(
+//            padding: EdgeInsets.all(20.0),
+//            color: Colors.pinkAccent,
+//            child: Text('2'),
+//         ),
+// ),
