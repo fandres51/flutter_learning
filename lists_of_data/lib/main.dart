@@ -15,10 +15,17 @@ class QuoteList extends StatefulWidget {
 
 class _QuoteListState extends State<QuoteList> {
   List<Quote> quotes = [
-    Quote(author: 'Pablo', text: 'fjdsnflka jnfkj jdnf fdjnf dskjfnd fjds f'),
-    Quote(author: 'Pedro', text: 'fjdsnflka jnfkj jdnf fdjnf dskjfnd fjds f'),
-    Quote(author: 'Carlos', text: 'fjdsnflka jnfkj jdnf fdjnf dskjfnd fjds f')
+    Quote(author: 'Kaguya', text: 'fjdsnflka jnfkj jdnf fdjnf dskjfnd fjds f'),
+    Quote(author: 'Miuki', text: 'fjdsnflka jnfkj jdnf fdjnf dskjfnd fjds f'),
+    Quote(author: 'Yu', text: 'fjdsnflka jnfkj jdnf fdjnf dskjfnd fjds f'),
+    Quote(author: 'Chika', text: 'fjdsnflka jnfkj jdnf fdjnf dskjfnd fjds f'),
   ];
+
+  delete(Quote quote) {
+    setState(() {
+      quotes.remove(quote);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +37,10 @@ class _QuoteListState extends State<QuoteList> {
           backgroundColor: Colors.redAccent,
         ),
         body: Column(
-          children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
+          children: quotes
+              .map((quote) =>
+                  QuoteCard(quote: quote, delete: () => delete(quote)))
+              .toList(),
         ));
   }
 }
